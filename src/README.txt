@@ -6,7 +6,7 @@
 
 Page Icons:
 Logo:
-<a href="https://www.flaticon.com/free-icons/efficiency" title="efficiency icons">Efficiency icons created by Design Circle - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/long-time" title="long time icons">Long time icons created by ultimatearm - Flaticon</a>
 
 Folders:
 <a href="https://www.flaticon.com/free-icons/efficiency" title="efficiency icons">Efficiency icons created by Freepik - Flaticon</a>

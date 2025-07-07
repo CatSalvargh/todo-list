@@ -2,14 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --header-height: 10vh;
+    --header-height: 12vh;
     --footer-height: 5vh;
     --main-height: calc(95vh - calc(var(--header-height) + var(--footer-height)));
     --main-width: clamp(600px 55vw 70vw);
     --gap: 12px;
 
     /* Colors */
-    --purple-dark: rgba(23, 102, 230, 0.7);
+    --purple-dark: rgba(23, 102, 230, 0.5);
     --aqua: rgba(143, 255, 251, 0.55);
 }
 
@@ -29,7 +29,6 @@
                 "side-left side-left footer footer";
     place-items: center stretch;
     gap: var(--gap);
-    padding: 5px;
 }
 
 .logo-container {
@@ -42,18 +41,20 @@
     z-index: 1;
 
     & img {
-        height: 100%;
+        height: 140%;
         width: auto;
         object-fit: cover;
+        transform: rotateZ(-4deg);
     }
 
     & h1 {
         font-size: 3.5rem;
         z-index: 1;
-        transform: translateX(0.6rem);
+        transform: translateX(-1.15rem);
         color: white;
         text-shadow:
-            3px 2px 2px var(--purple-dark),
+            2px 2px 1px var(--purple-dark),
+            2px 2px 1px var(--purple-dark),
             0 0 0.75em rgb(127, 223, 245),
             0 0 0.45em rgb(158, 241, 254);
     }
@@ -63,6 +64,27 @@
     grid-area: header;
     height: var(--header-height);
     border-radius: 8px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: calc(var(--gap) * 3);
+    padding-right: 2rem;
+
+    & .nav-btn {
+        height: 40%;
+        width: 7rem;
+        border-radius: 3px;
+        box-shadow: 
+            3px 3px 10px rgb(162, 228, 250),
+            inset 3px 3px 5px var(--aqua);
+        padding: 0.25rem;
+    }
+
+    & .nav-btn:hover, .left-btn:hover {
+        background-color: var(--aqua);
+        transform: scaleX(1.15);
+        cursor: pointer;
+    }
 }
 
 
@@ -70,17 +92,19 @@
     grid-area: main;
     height: var(--main-height);
     align-self: start;
-    padding-left: 1.5rem;
+    padding-left: 2rem;
+    display: flex;  
+    flex-direction: column;
+    gap: calc(var(--gap) * 2);
 }
 
 .side-left {
     grid-area: 1 / 1 / 5 / 3;
-    align-self: start;
     display: flex;
     flex-direction: column;
     height: calc(var(--main-height) + var(--header-height) + var(--footer-height) + calc(var(--gap) * 2));
     gap: calc(var(--gap) * 2);
-    padding-top: 5rem;
+    padding-top: 10rem;
     font-size: clamp(12px, 1.25rem, 3vw);
 }
 
@@ -114,7 +138,7 @@ footer {
 
     & .folder {
         width: clamp(95px, 2vw, 3.5vw);
-        height: 80px;
+        height: 60%;
         box-shadow: 2px 2px 12px steelblue;
         position: relative;
         background-color: white;
@@ -135,25 +159,26 @@ footer {
     & .folder::before {
         content: "Priorities";
         width: 80%;
-        height: 20px;
+        height: 22px;
         border-radius: 5px 20px 0 0;
         background-color: rgb(210, 35, 230);
         border-top: 1px solid gray;
         border-left: 1px solid gray;
         border-right: 1px solid gray;
         position: absolute;
-        top: -20px;
+        top: -22px;
         left: -1px;
-        font-size: 1.15em;
+        font-size: 1em;
+        text-align: center;
         color: whitesmoke;
         text-shadow: 1px 1px 2px black;
     }
 }
 
 .main-body-container {
-    border: 2px solid lightgray;
-    width: 90%;
-    height: 80%;
+    border: 1px solid rgb(236, 236, 236);
+    width: 95%;
+    height: 75%;
 
     & h3 {
         text-align: center;
@@ -224,7 +249,6 @@ footer {
 
 /* ====  Common  ====  */
 .nav, footer {
-    /* background: linear-gradient(90deg,rgba(7, 117, 219, 1) 0%, rgba(0, 176, 240, 1) 24%, rgba(48, 209, 216, 1) 44%, rgba(120, 245, 218, 1) 77%, rgba(165, 253, 252, 1) 98%); */
     background: linear-gradient(324deg,rgba(41, 40, 120, 1) 2%, rgba(40, 57, 189, 1) 21%, rgba(23, 102, 230, 1) 47%, rgba(143, 255, 251, 0.98) 82%);
     border-radius: 8px;
 }
@@ -238,7 +262,7 @@ footer {
 /* Common Backgrounds */
 
 
-/* ====  buttons  ====  */
+/* ====  BUTTONS  ====  */
 .btn {
     background-color: rgba(40, 57, 189, 0.85);
     color:whitesmoke;
@@ -261,6 +285,7 @@ footer {
     top: 35%;
     left: 92%;           
 }
+
 .side-left .left-contract-btn {
     top: 0; 
     left: 92%; 
@@ -273,6 +298,11 @@ footer {
     width: clamp(135px, 12vw, 195%);
     font-size: clamp(18px, 1.25rem, 2rem);
     margin: 0 auto;
+}
+
+.left-btn:hover {
+      opacity: 0.8;
+      cursor: pointer;
 }
 
 .right-contract-btn {
@@ -305,6 +335,7 @@ footer {
 
     .side-left  {
         height: var(--main-height);
+        grid-area: logo;
     }
 
     .side-right {

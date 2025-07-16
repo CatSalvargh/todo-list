@@ -1,0 +1,31 @@
+.btn  
+    display: inline-block
+    padding: 5px 15px
+    background-color: lighten($main, 10%)
+    color:whitesmoke
+    text-shadow: 2px 2px 4px rgb(1, 25, 44)
+    border: none
+    box-shadow: 2px 2px 5px gray, 5px 5px 12px lightgray
+    color: whitesmoke
+
+    &:hover, 
+    &:focus
+        background: lighten($accent, 20%)
+
+.btn-inv
+    background-color: whitesmoke
+    border: none
+    box-shadow: 2px 2px 4px var(--purple-dark)
+    color: darken($text-main, 20%)
+
+    &:hover
+        background-color: $main
+        color: whitesmoke
+
+.add-btn, .left-contract-btn, .folder-add-btn, .right-contract-btn 
+    position: relative
+    width: 35px
+    height: 35px
+    border-radius: 50px  
+    border: none
+    font-size: 18px 

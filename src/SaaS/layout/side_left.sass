@@ -1,0 +1,75 @@
+.side-left
+    grid-area: side-left
+    display: flex
+    flex-direction: column
+    gap: calc($gap) * 2
+    width: max(max-content, 15vw)
+    background: transparent 
+    padding-top: 8vh
+    gap: $gap
+    font-family: quicksand-bold
+    font-weight: bolder
+
+    #workspace-title
+        padding: 2rem 1rem
+        color: lighten($main, 20%)
+
+    & .left-btn
+        width: 100%
+        display: flex
+        justify-content: space-evenly
+        align-items: center
+
+        &:hover, &:focus
+            box-shadow: 2px 2px 2px lighten($text-main, 40%), 4px 4px 10px $white
+
+    & button
+        background: transparent
+        border: none
+        width: 60%
+        text-align: left
+        font-size: clamp(12px, 1rem, 40px)
+        padding-left: 5px
+        text-shadow: 2px 2px 6px lighten($text-main, 20%)
+        color: lighten($main, 20%)
+    
+    & img
+        width: clamp(20px, 12%, 30px)
+        height: clamp(25px, 12%, 30px)
+
+    & .help-buttons
+        align-self: end
+        margin-top: 20%
+        display: flex
+        flex-direction: column
+
+
+    .inactive
+        display: none
+
+    .add-div-dropdown
+        position: absolute
+        top: 19%
+        align-self: flex-end
+        display: flex
+        flex-direction: column
+        width: max-content
+        transform: translateX(4rem) translateY(4.5rem) 
+        border: 1px solid lightgray
+        padding: 1rem
+        backdrop-filter: blur(8px)
+        gap: $gap
+
+    .add-btn
+        align-self: flex-end
+        position: absolute
+        transform: translateX(1rem) translateY(5rem) 
+        width: 35px
+        height: 35px
+        border-radius: 50px
+        top: 15%
+        font-size: 1.5rem
+        padding-left: 0.7rem
+
+
+  

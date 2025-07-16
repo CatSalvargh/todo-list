@@ -1,0 +1,33 @@
+.nav-toggle
+    display: none
+
+@media(max-width: 950px)
+    .nav-toggle
+        display: block
+        grid-area: burger
+        cursor: pointer
+
+        .hamburger, .hamburger::before, .hamburger::after
+            content: ''
+            display: block
+            width: 1.8em
+            height: 4px
+            background: whitesmoke
+            transition: all ease-in-out 50ms
+
+        .hamburger::before
+            transform: translateY(-7px)
+
+        .hamburger::after
+            transform: translateY(4px)
+
+        .hamburger.is-open
+            transform: rotate(45deg)
+            height: 5px
+
+            &::after
+                transform: rotate(-90deg)
+                height: 5px
+        
+            &::before
+                display: none

@@ -1,7 +1,7 @@
 $gap: 10px
 $padding: 1rem
-$header-height: 15vh
-$footer-height: 10vh
+$header-height: 20vh
+$footer-height: 8vh
 $main-height: calc(100vh - $header-height - $footer-height)
 $main-width: clamp(160px, 64vw, 1500px)
 $left-width: clamp(140px, 15vw, 250px)
@@ -10,7 +10,7 @@ $right-width: clamp(140px, 15vw, 400px)
 body
     display: grid
     grid-template-columns: $left-width $main-width $right-width
-    grid-template-rows: minmax(auto, max-content)
+    grid-template-rows: minmax(120px, auto)
     grid-template-areas: 'header header header' 'side-left main side-right' 'side-left footer footer'
     place-content: center
     gap: $gap
@@ -38,8 +38,6 @@ body
         
 .side-right 
     grid-area: side-right
-    height: $main-height
-    width: $right-width
     background-color: $sidebars
 
 footer 
@@ -52,7 +50,7 @@ footer
 @media(max-width: 950px)
     body
         grid-template-columns: $left-width 1fr
-        grid-template-rows: minmax(auto, max-content)
+        grid-template-rows: repeat(auto-fit, minmax(200px, max-content))
         grid-template-areas: 'header header' 'side-left main' 'side-right side-right' 'footer footer'
 
     .main-container
@@ -61,9 +59,6 @@ footer
     .side-left 
         height: $main-height
 
-    .side-right 
-        height: max-content
-
     .header, .side-right, footer
         width: calc(100vw - calc($padding * 2))
 
@@ -71,8 +66,8 @@ footer
 @media(max-width: 500px)
     body
         grid-template-columns: 0.5fr 1fr
-        grid-template-rows: minmax(max-content, auto)
-        grid-template-areas: 'header header' 'main main' 'side-left side-left' 'side-right side-right' 'footer footer'
+        grid-template-rows: minmax(100px, auto)
+        grid-template-areas: 'header header' 'side-left side-left' 'main main' 'side-right side-right' 'footer footer'
 
     .side-left 
         height: max-content

@@ -1,20 +1,53 @@
 .side-right
-    display: flex
-    flex-direction: column
-    gap: calc($gap * 0.25)
-    padding: 15% 0.7rem
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: repeat(auto-fit, 50%)
+    place-content: center
+    gap: calc($gap * 3)
+    padding: 1rem 0.7rem
     background: transparent 
 
-    & h3
-        font-size: clamp(12px, 1rem, 40px)
-        color: $text-main
+.today 
+    width: clamp(100px, 13vw, 400px)
+    height: calc($main-height / 2)
+    background-color: white
 
-        &:last-of-type  
-            margin-top: 1rem
+    & img 
+        height: 3.5rem
+    
+    &::before 
+        content: ' Today '
+        background-color: rgb(210, 35, 230)
+        border-radius: 5px
+        border-top: 1px solid gray
+        border-left: 1px solid gray
+        border-right: 1px solid gray
+        font-size: 1rem
+        color: whitesmoke
+        text-shadow: 1px 1px 2px black
+        padding: 0.2rem 2rem
 
-.right-card
-    height: 45%
-    border: 1px solid lightgray
-    box-shadow: 3px 3px 5px lightgray
-    border-radius: 5px
-    background-color: $white
+.comingup 
+    width: clamp(100px, 13vw, 400px)
+    height: calc($main-height / 3)
+    background-color: white
+
+    &::before 
+        content: ' Coming up!'
+        background-color: $main
+        border-radius: 5px
+        font-size: 1rem
+        color: whitesmoke
+        text-shadow: 1px 1px 2px black
+        padding: 0.2rem 0.75rem
+
+@media(max-width: 950px)
+    .side-right
+        grid-template-columns: repeat(2, auto)
+        grid-template-rows: minmax(max-content, auto)
+        padding: 0.5rem 1rem
+        gap: $gap
+
+        .today, .comingup
+            width: clamp(150px, 45vw, 240px)
+            height: 25vh

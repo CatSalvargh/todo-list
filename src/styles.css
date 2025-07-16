@@ -13,7 +13,8 @@
     --purple-dark: rgba(23, 102, 230, 0.75);
     --aqua: rgba(143, 255, 251, 0.55);
     --main-text: rgb(81, 81, 81);
-    --text-title-dark: rgba(23, 102, 230)
+    --text-title-dark: rgba(23, 102, 230);
+    --side-bars-color: rgba(236, 239, 240, 0.7);
 }
 
 body {
@@ -251,7 +252,7 @@ footer {
 }
 
 .side-left, .side-right {
-    background-color: rgba(236, 239, 240, 0.7);
+    background-color: var(--side-bars-color);
     border-radius: 5px;
 }
 /* End Common */
@@ -311,7 +312,7 @@ footer {
     flex-direction: column;
     width: max-content;
     transform: translateX(4rem) translateY(4.5rem); 
-    border: 1px solid whitesmoke;
+    border: 1px solid lightgray;
     padding: 1rem;
     backdrop-filter: blur(8px);
     gap: var(--gap)
@@ -321,13 +322,21 @@ footer {
     display: none;
 }
 
-.side-left .left-contract-btn {
-    top: 0; 
-    left: 92%; 
-    background-color: rgba(245, 240, 228, 0.35);        
+.btn-dropdown {
+    padding: 0.25rem 1rem;
 }
 
-.side-left .left-btn {
+.left-contract-btn {
+    position: relative;
+    top: -18%; 
+    left: 90%; 
+    background-color: var(--side-bars-color);      
+    font-size: small;  
+    color: var(--main-text);
+    border-bottom: 1px solid lightgray;
+}
+
+.left-btn {
     border-radius: 5px;
     height: 35px;
     width: clamp(80px, 12vw, 100%);
@@ -341,9 +350,9 @@ footer {
 }
 
 .right-contract-btn {
-    top: 2%; 
+    top: 0; 
     left: -5%; 
-    background-color: rgba(245, 240, 228, 0.55);        
+    background-color: var(--side-bars-color);        
 }
 
 

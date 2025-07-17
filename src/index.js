@@ -2,7 +2,7 @@ import "./styles.css"
 import { nav_toggle } from "./scripts/nav.js";
 import { show_All } from "./scripts/all_projects.js";
 import { Project } from "./scripts/factory_project.js";
-import { add_things } from "./scripts/add_things.js";
+import { add_things, add_project } from "./scripts/add_things.js";
 
 const project = Project(1, 'Project 1', '2/8/2025', 'important', 'this is a test project')
 const add_button = document.getElementById('add-btn')
@@ -18,5 +18,5 @@ add_button.addEventListener('click', () => {
     dropdown .classList.toggle('add-div-dropdown')
 
     
-    add_things()
+    add_project()
 })

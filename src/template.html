@@ -35,6 +35,31 @@
                 <button id="folder" class="btn-inv btn-dropdown">Folder</button>
                 <button id="reminder" class="btn-inv btn-dropdown">Reminder</button>
             </div>
+            <div id="add-input" class="inactive">
+                <form action="" method="GET" id="input">
+                    <label >
+                        *Task name:
+                        <input type="text" name="title" id="title" required>
+                    </label>
+                    <label >
+                        *Select a due date
+                        <input type="date" name="dueDate" id="dueDate" required>
+                    </label>
+                    <label>
+                        *Priority
+                        <input type="number" name="priority" id="priority" max="10" required>
+                    </label>
+                    <label>
+                        Task description
+                        <textarea name="desc" id="desc" placeholder="enter a description"></textarea>
+                    </label>
+                    <fieldset >
+                        <input type="submit" value="Create" id="create-btn" class="btn form-btn">
+                        <button id="cancel-btn" class="btn form-btn">Cancel</button>
+                    </fieldset>
+                    <p>All elements marked: * are mandatory</p>
+                </form>
+            </div>
         </div>
         <div class="main-container">
             <div class="folder-container">

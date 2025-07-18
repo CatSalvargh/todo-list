@@ -1,3 +1,17 @@
+Todo App - part of the Odin project Full stack JavaScript Path 
+
+Skills
+    Factory Functions vs Classess/Constructors
+    Composition vs Inheritance
+    Dynamic (async) imports
+    Dynamic DOM manipulation / Update
+    JS Form handling (including avoiding duplicate submissions, modal dialogs and different submission / cancellation modes)
+    Code organization: 
+        Webpack and ES6 Modules
+        SaSS  (CSS Preproscessor: Prepros )
+
+Other Skills
+    GIT (command line) & GitHub
 
 
 

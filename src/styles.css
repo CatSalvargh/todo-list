@@ -365,8 +365,8 @@ p {
 body {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: clamp(140px, 15vw, 250px) 10px clamp(160px, 64vw, 1500px) 10px clamp(140px, 15vw, 400px);
-  grid-template-columns: clamp(140px, 15vw, 250px) clamp(160px, 64vw, 1500px) clamp(140px, 15vw, 400px);
+  -ms-grid-columns: clamp(140px, 15vw, 250px) 10px clamp(160px, 70vw, 1500px) 10px clamp(140px, 15vw, 400px);
+  grid-template-columns: clamp(140px, 15vw, 250px) clamp(160px, 70vw, 1500px) clamp(140px, 15vw, 400px);
   -ms-grid-rows: minmax(120px, auto);
   grid-template-rows: minmax(120px, auto);
       grid-template-areas: "header header header" "side-left main side-right" "side-left footer footer";
@@ -392,7 +392,7 @@ body {
   -ms-grid-row: 3;
   -ms-grid-column: 3;
   grid-area: main;
-  width: clamp(160px, 64vw, 1500px);
+  width: clamp(160px, 70vw, 1500px);
   height: 72vh;
   background-color: white;
 }
@@ -597,6 +597,8 @@ footer {
   font-size: clamp(20px, 2rem, 40px);
   color: white;
   text-shadow: 1px 1px 3px #02219f, 3px 2px 5px rgb(2, 38, 184);
+  -webkit-filter: contrast(200%);
+          filter: contrast(200%);
 }
 
 .nav {
@@ -688,6 +690,9 @@ footer {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
+}
+.main-task-container .item-container {
+  width: clamp(160px, 70vw, 1500px);
 }
 .main-task-container img {
   width: 25%;
@@ -1089,22 +1094,19 @@ td .btn-inv {
   border-radius: 50px;
 }
 
-.add-input {
+dialog {
   -ms-flex-item-align: end;
       align-self: flex-end;
   justify-self: flex-end;
-  -webkit-transform: translateX(45vw) translateY(-32vh);
-          transform: translateX(45vw) translateY(-32vh);
+  -webkit-transform: translateX(-35vw) translateY(-15vh);
+          transform: translateX(-35vw) translateY(-15vh);
   z-index: 20;
   border-radius: 50px;
   border: 1px solid lightgray;
   padding: 3rem;
-  -webkit-backdrop-filter: blur(50px);
-          backdrop-filter: blur(50px);
-}
-.add-input p {
-  font-size: clamp(9px, 0.75rem, 10px);
-  text-align: start;
+  background: transparent;
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
 }
 
 #input {

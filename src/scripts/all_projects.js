@@ -1,36 +1,5 @@
-const projects = [
-    {
-        id: 1, 
-        title: "ClientX SDK Integration",
-        dueDate: "21/7/2025",
-        priority: "Urgent",
-        desc: "A project created to test the show all project functionality. Nothing more, nothing less"
-    },
-    {
-        id: 2, 
-        title: "Team bonding event",
-        dueDate: "31/7/2025",
-        priority: "Normal",
-        desc: "A project created to test the show all project functionality. Nothing more, nothing less"
-    },
-    {
-        id: 3, 
-        title: "Emma's 121",
-        dueDate: "25/7/2025",
-        priority: "Normal",
-        desc: "A project created to test the show all project functionality. Nothing more, nothing less"
-    },
-    {
-        id: 4, 
-        title: "AI Conference",
-        dueDate: "28/7/2025",
-        priority: "Normal",
-        desc: "A project created to test the show all project functionality. Nothing more, nothing less"
-    }
-]
-
-const showAll = document.getElementById('all')
-const display_tb = `
+const showAll_btn = document.getElementById('all')
+const display_headers = `
     <thead>
         <tr>
             <th>Priority</th>
@@ -44,23 +13,31 @@ const display_tb = `
 `
 
 export const show_All = function() {
+    let projects;
 
-    showAll.addEventListener('click', () => {
-        const container = document.getElementById('main-task-container')
-        let table = document.getElementById('table');
+    import("./add_things.js").then(({projectList}) => {
+        projects = projectList        
+    })
+
+    showAll_btn.addEventListener('click', () => {
+        const container = document.getElementById('item-container')
+        let table = document.getElementById('projects-table');
         const title = document.getElementById('main-task-title');
-        const img = document.getElementById('main-task-img');
 
-        title.innerHTML = "Here are all your open projects";
-        title.classList.add('large-title')
-        img.style.display = "none";
-
-        if (!table) {
-            table = document.createElement('table')
-            table.id = "table";
+        if (projects.length < 1) {
+            title.innerHTML = 'You do not have any open projects'   
+            return        
         }
 
-        table.innerHTML = display_tb;
+        title.innerHTML = "Here are all your open projects";
+
+        container.innerHTML = ''
+
+        if(!table) {
+            table = document.createElement('table');
+        }
+        table.id = "projects-table";
+        table.innerHTML = display_headers;
 
         projects.forEach((p) => {
             table.innerHTML += `
